@@ -1,7 +1,5 @@
 package uiTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -10,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import util.SeleniumManager;
 
 class Suite01_TelaInicial {
 
@@ -41,8 +41,7 @@ class Suite01_TelaInicial {
 	
 	@Test
 	void testTC02_VerificarTitulo() {
-		System.setProperty("webdriver.gecko.driver","C:\\develop\\selenium-3.6.0\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
+		WebDriver driver = SeleniumManager.initWebDriverFirefox();
         
         driver.get("http://www.way2automation.com/demo.html");
         
