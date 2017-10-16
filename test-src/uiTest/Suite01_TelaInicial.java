@@ -2,6 +2,7 @@ package uiTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 class Suite01_TelaInicial {
 
 	@Test
-	void testTC01_VerificarTitulo() {
+	void testTC01_AbrirGoogle() {
 		System.setProperty("webdriver.gecko.driver","C:\\develop\\selenium-3.6.0\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         
@@ -36,6 +37,18 @@ class Suite01_TelaInicial {
         driver.quit();
         
 		//fail("Not yet implemented");
+	}
+	
+	@Test
+	void testTC02_VerificarTitulo() {
+		System.setProperty("webdriver.gecko.driver","C:\\develop\\selenium-3.6.0\\geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        
+        driver.get("http://www.way2automation.com/demo.html");
+        
+        Assert.assertEquals("Welcome", driver.getTitle());
+        
+        driver.quit();
 	}
 
 }
